@@ -1,5 +1,7 @@
-package domain;
+package com.mycompany.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,9 @@ import javax.persistence.Id;
  * @author gduvinage
  */
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Hero implements Serializable {
     
     @Id
