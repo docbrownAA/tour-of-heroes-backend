@@ -31,6 +31,24 @@ public class HeroServiceImpl implements HeroService {
     public Hero findById(Integer id) {
        return heroRepository.findOne(id);
     }
+
+    @Override
+    public Hero create(Hero hero) {
+        return heroRepository.save(hero);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        heroRepository.delete(id);
+    }
+    
+    @Override
+    public Hero upDate(Hero hero){
+        return heroRepository.save(hero);
+    }
+    
+    
+    
     
 
 }
